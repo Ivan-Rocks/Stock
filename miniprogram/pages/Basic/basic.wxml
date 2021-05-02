@@ -1,0 +1,23 @@
+<!--miniprogram/pages/Basic/basic.wxml-->
+<view>
+  <text>第一部分：个人信息采集（1/3）</text>
+</view>
+<view>
+  <text>请问您的姓名是：</text>
+  <input type="text" bindinput="setName"> </input>
+</view>
+<view>
+  <text>请问您的性别是：</text>
+</view>
+<view>
+  <text>请问您的年龄是：</text>
+</view>
+<view>
+  <text>请问您的最高学历是：</text>
+</view>
+<view>
+  <text>请问您目前的职业是：</text>
+</view>
+<view>
+  <text>请问您个人最近3年的平均收入是：</text>
+</view>

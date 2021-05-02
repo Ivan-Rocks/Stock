@@ -1,0 +1,5 @@
+<!--miniprogram/pages/Start.wxml-->
+<view class="Start">
+    <text>感谢大家在百忙之中进行测试！</text>
+</view>
+<button type="primary" bindtap="TurnPage">点击按钮开始测试</button>
