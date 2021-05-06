@@ -4,20 +4,51 @@
 </view>
 <view>
   <text>请问您的姓名是：</text>
-  <input type="text" bindinput="setName"> </input>
+  <input type="text" bindinput="setName" placeholder="请输入姓名"> </input>
 </view>
 <view>
   <text>请问您的性别是：</text>
+  <radio-group class="radio-group" bindchange="genderChange">
+    <label class="radio" wx:for="{{genderChoices}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </radio-group>
 </view>
 <view>
   <text>请问您的年龄是：</text>
+  <radio-group class="radio-group" bindchange="ageChange">
+    <label class="radio" wx:for="{{ageChoices}}">
+       <view>
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </view>
+    </label>
+  </radio-group>
 </view>
 <view>
   <text>请问您的最高学历是：</text>
+  <radio-group class="radio-group" bindchange="diplomaChange">
+    <label class="radio" wx:for="{{diplomaChoices}}">
+       <view>
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </view>
+    </label>
+  </radio-group>
 </view>
 <view>
   <text>请问您目前的职业是：</text>
+  <input type="text" bindinput="setOccupation" placeholder="请输入职业"> </input>
 </view>
 <view>
   <text>请问您个人最近3年的平均收入是：</text>
+  <radio-group class="radio-group" bindchange="incomeChange">
+    <label class="radio" wx:for="{{incomeChoices}}">
+       <view>
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </view>
+    </label>
+  </radio-group>
+</view>
+
+<view>
+  <button type="primary" bindtap="TurnPage">继续</button>
 </view>

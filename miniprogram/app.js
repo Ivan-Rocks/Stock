@@ -15,12 +15,18 @@ App({
     }
 
     this.globalData = {
+      //Basic
       name: "",
       gender: "",
       age: "",
       diploma: "",
       occupation: "",
-      
+      income: "",
+      stock_experience: "",
+      investment_experience: "",
+      frequency: "",
+      choose1: "",
+      //Personality
     }
   }
 })
