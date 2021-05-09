@@ -1,5 +1,7 @@
 <!--miniprogram/pages/Results/result.wxml-->
 <view>
   <text>恭喜您完成测试！</text>
-  <text>{{basic_answer}}</text>
+</view>
+<view>
+  <text>The name is: {{basic_answer}}</text>
 </view>

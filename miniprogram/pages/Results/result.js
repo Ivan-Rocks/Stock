@@ -7,14 +7,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    basic_answer: "",
+    basic_answer : "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.basic_answer =  app.globalData.name
+    var that = this;
+    that.setData({
+      basic_answer: app.globalData.name,
+    })
+    console.log(this)
   },
 
   /**
