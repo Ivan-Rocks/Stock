@@ -3,5 +3,5 @@
   <text>恭喜您完成测试！</text>
 </view>
 <view>
-  <text>The name is: {{basic_answer}}</text>
+  <text>{{basic_answer}}</text>
 </view>

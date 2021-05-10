@@ -43,6 +43,25 @@ Page({
       {name: '是', value: '是'},
       {name: '否', value: '否'},
     ],
+    investment_experienceChoices:[
+      {name:'有限', value:'有限：除银行活期和定期存款外，没有其他投资经验'},
+      {name:'一般', value:'一般：除银行活期账户和定期存款外，有一年以上的股票、基金、期货、外汇等投资经理，但还需要进一步的指导'},
+      {name:'丰富', value:'丰富：我是一位有经验的投资者，有2年以上的股票、基金、期货、外汇等投资经历，但需要进一步的指导'},
+      {name:'非常丰富', value:'非常丰富：我是一位非常有经验的投资者，有5年以上的股票、基金、期货、外汇等投资经历'},
+    ],
+    frequencyChoices:[
+      {name:'1-5', value:'1-5'},
+      {name:'5-10', value:'5-10'},
+      {name:'10-15', value:'10-15'},
+      {name:'15-30', value:'15-30'},
+      {name:'30次以上', value:'30次以上'},
+    ],
+    choose1Choices:[
+      {name:'1', value:'1'},
+      {name:'2', value:'2'},
+      {name:'3', value:'3'},
+      {name:'4', value:'4'},
+    ],
   },
 
   genderChange: function (e) {
@@ -71,21 +90,36 @@ stock_experienceChange: function(e) {
   console.log(app.globalData.stock_experience)
 },
 
-  setName: function (e) {
-    app.globalData.name = e.detail.value
-    console.log(app.globalData.name)
-  },
+investment_experienceChange: function(e) {
+  app.globalData.investment_experience = e.detail.value
+  console.log(app.globalData.investment_experience)
+},
 
-  setOccupation: function (e) {
-    app.globalData.p = e.detail.value
-    console.log(app.globalData.occupation)
-  },
+frequencyChange: function(e) {
+  app.globalData.frequency = e.detail.value
+  console.log(app.globalData.frequency)
+},
 
-  TurnPage: function(event) {
-    wx.navigateTo({
-      url: '/pages/Results/result',
-    })
-  },
+choose1Change: function(e) {
+  app.globalData.choose1 = e.detail.value
+  console.log(app.globalData.choose1)
+},
+
+setName: function (e) {
+  app.globalData.name = e.detail.value
+  console.log(app.globalData.name)
+},
+
+setOccupation: function (e) {
+  app.globalData.p = e.detail.value
+  console.log(app.globalData.occupation)
+},
+
+TurnPage: function(event) {
+  wx.navigateTo({
+    url: '/pages/Results/result',
+  })
+},
 
   /**
    * 生命周期函数--监听页面加载
