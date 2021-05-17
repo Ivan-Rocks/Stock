@@ -27,6 +27,7 @@ App({
       frequency: "",
       choose1: "",
       //Personality
+      personality_answers: new Array(),
     }
   }
 })

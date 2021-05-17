@@ -8,10 +8,13 @@
 <view>
   <label class="outerloop" wx:for="{{questions}}">
       <text>{{item.value}}</text>
-      <radio-group class="radio-group" bindchange="answerChange" data-name="{{item.value}}">
+      <radio-group class="radio-group" bindchange="answerChange" data-name="{{item.name}}">
         <label class="radio" wx:for="{{choices}}">
           <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
         </label>
       </radio-group>
   </label>
+</view>
+<view>
+  <button type="primary" bindtap="TurnPage">继续</button>
 </view>
