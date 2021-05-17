@@ -117,7 +117,7 @@ setOccupation: function (e) {
 
 TurnPage: function(event) {
   wx.navigateTo({
-    url: '/pages/Results/result',
+    url: '/pages/Personality/personality',
   })
 },
 

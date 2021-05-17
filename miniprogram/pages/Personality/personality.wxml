@@ -1,0 +1,17 @@
+<!--miniprogram/pages/Personality/personality.wxml-->
+<view>
+  <text>第一部分（2/2）:性格测试</text>
+  <text>
+    请按您对问题的同意程度进行回答。1为非常不同意，5为非常同意。
+  </text>
+</view>
+<view>
+  <label class="outerloop" wx:for="{{questions}}">
+      <text>{{item.value}}</text>
+      <radio-group class="radio-group" bindchange="answerChange" data-name="{{item.value}}">
+        <label class="radio" wx:for="{{choices}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+  </label>
+</view>

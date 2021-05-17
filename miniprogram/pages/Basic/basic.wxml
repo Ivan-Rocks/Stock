@@ -1,6 +1,6 @@
 <!--miniprogram/pages/Basic/basic.wxml-->
 <view>
-  <text>第一部分：个人信息采集（1/2）</text>
+  <text>第一部分（1/2）：个人信息采集</text>
 </view>
 <view>
   <text>请问您的姓名是：</text>
