@@ -1,0 +1,8 @@
+<!--miniprogram/pages/PartTwoNotice/part2.wxml-->
+<view>
+  <text>第二部分：股票交易模拟</text>
+</view>
+<view>
+  <button type="primary" bindtap="TurnPage">继续</button>
+</view>
+

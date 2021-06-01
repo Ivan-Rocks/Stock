@@ -1,4 +1,4 @@
-// miniprogram/pages/Start.js
+// miniprogram/pages/PartTwoNotice/part2.js
 Page({
 
   /**
@@ -10,7 +10,7 @@ Page({
 
   TurnPage: function(event) {
     wx.navigateTo({
-      url: '/pages/PartOneNotice/part1',
+      url: '/pages/Simulation/simulation',
     })
   },
 
