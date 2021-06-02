@@ -1,18 +1,28 @@
 // miniprogram/pages/Simulation/simulation.js
+var app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    submit_status : false,
+    check : '123',
+  },
 
+  setStatus: function(e) {
+    this.data.check = e.detail.value 
+    if(this.data.check == '12345') {
+      this.data.check = true
+    }
+    console.log(this.data.check)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**

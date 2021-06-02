@@ -1,2 +1,13 @@
 <!--miniprogram/pages/Simulation/simulation.wxml-->
-<text>miniprogram/pages/Simulation/simulation.wxml</text>
+<view>
+  <text>这里放图片</text>
+</view>
+
+<view>
+  <text>输入以“12345”改变提交状态</text>
+  <input type="text" bindinput="setStatus" placeholder="请输入"> </input>
+  <text>Submit status is: {{submit_status}}</text>
+</view>
+<view>
+  <button type="primary" disabled="{{!submit_status}}">提交本次操作</button>
+</view>
