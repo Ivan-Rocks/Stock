@@ -8,15 +8,21 @@ Page({
    */
   data: {
     submit_status : false,
-    check : '123',
+    input_val : '',
   },
 
   setStatus: function(e) {
-    this.data.check = e.detail.value 
-    if(this.data.check == '12345') {
-      this.data.check = true
+    //this.data.input_val = e.detail.value 
+    this.setData({
+      input_val: e.detail.value
+    })
+    if(this.data.input_val == '12345') {
+      ///this.data.submit_status = true
+      this.setData({
+        submit_status: true
+      })
     }
-    console.log(this.data.check)
+    console.log(this.data.input_val + " " + this.data.submit_status)
   },
 
   /**
@@ -36,7 +42,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad()
   },
 
   /**

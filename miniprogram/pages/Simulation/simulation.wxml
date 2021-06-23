@@ -6,6 +6,7 @@
 <view>
   <text>输入以“12345”改变提交状态</text>
   <input type="text" bindinput="setStatus" placeholder="请输入"> </input>
+  <text>Input value is: {{input_val}}</text>
   <text>Submit status is: {{submit_status}}</text>
 </view>
 <view>
