@@ -1,1 +1,9 @@
 /* miniprogram/pages/Simulation/simulation.wxss */
+.box {
+  display: flex;
+}
+
+.right-box {
+  margin: auto;
+  margin-right: 10rpx;
+}
