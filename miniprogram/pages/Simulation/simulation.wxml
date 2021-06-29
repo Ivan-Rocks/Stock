@@ -9,7 +9,27 @@
 </view>
 
 <view>
-  <text>输入以“12345”改变提交状态</text>
+  <text class="stock-label">股票</text>
+  <text>现报价</text>
+  <text>历史概率</text>
+  <text>买/卖</text>
+  <text>交易量</text>
+</view>
+
+<view>
+  <label class="outerloop" wx:for="{{stock_name}}">
+    <view class="horizontal-layout">
+      <text class="stock-label">{{item.value}}</text>
+      <text>100</text>
+      <text>历史概率</text>
+      <text>买</text>
+      <input type="text" placeholder="交易量"> </input>
+    </view>
+  </label>
+</view>
+
+<view>
+  <text>输入12345改变status</text>
   <input type="text" bindinput="setStatus" placeholder="请输入"> </input>
   <text>Input value is: {{input_val}}</text>
   <text>Submit status is: {{submit_status}}</text>

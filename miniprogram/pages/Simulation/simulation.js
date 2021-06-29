@@ -9,6 +9,13 @@ Page({
   data: {
     submit_status : false,
     input_val : '',
+    stock_name:[
+      {name: '1', value: 'A'},
+      {name: '2', value: 'B'},
+      {name: '3', value: 'C'},
+      {name: '4', value: 'D'},
+      {name: '5', value: 'E'},
+    ],
   },
 
   setStatus: function(e) {
