@@ -8,12 +8,38 @@
   margin-right: 10rpx;
 }
 
-.stock-label {
-  color: red;
-  border: 8rpx solid red
-}
-
 .horizontal-layout {
   display: flex;
   margin: 20rpx;
 }
+
+.stock-label {
+  color: red;
+  border: 8rpx solid red;
+  margin-right: 20rpx;
+
+}
+
+.stock-price {
+  color: orange;
+  margin-right: 20rpx;
+}
+
+.stock-possibility {
+  color: blue;
+  margin-right: 10px;
+}
+
+.stock-purchase {
+  color: green;
+  margin-right: 10rpx;
+}
+
+.stock-button {
+  margin-right: 5rpx;
+}
+
+.stock-number {
+  margin-left: 10rpx;
+}
+

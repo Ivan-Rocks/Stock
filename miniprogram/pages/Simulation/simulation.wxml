@@ -9,10 +9,10 @@
 </view>
 
 <view>
-  <text class="stock-label">股票</text>
-  <text>现报价</text>
-  <text>历史概率</text>
-  <text>买/卖</text>
+  <text style="margin-right: 10rpx">股票</text>
+  <text style="margin-right: 10rpx">现报价</text>
+  <text style="margin-right: 50rpx">历史概率</text>
+  <text style="margin-right: 50rpx">买/卖</text>
   <text>交易量</text>
 </view>
 
@@ -20,14 +20,14 @@
   <label class="outerloop" wx:for="{{stock_name}}">
     <view class="horizontal-layout">
       <text class="stock-label">{{item.value}}</text>
-      <text>100</text>
-      <text>历史概率</text>
-      <text>买</text>
-      <input type="text" placeholder="交易量"> </input>
+      <text class="stock-price">1000</text>
+      <text class="stock-possibility">10% 30% 50%</text>
+      <button type="primary" style="width:20vw">买</button>
+      <input type="text" placeholder="交易量" class="stock-number"> </input>
     </view>
   </label>
 </view>
-
+ 
 <view>
   <text>输入12345改变status</text>
   <input type="text" bindinput="setStatus" placeholder="请输入"> </input>
