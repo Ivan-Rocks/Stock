@@ -3,6 +3,13 @@
   display: flex;
 }
 
+.middle-box {
+  margin: auto;
+  margin-right: 5rpx;
+  color: purple;
+  font-size: large;
+}
+
 .right-box {
   margin: auto;
   margin-right: 10rpx;

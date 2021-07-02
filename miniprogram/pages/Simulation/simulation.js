@@ -16,20 +16,22 @@ Page({
       {name: '4', value: 'D'},
       {name: '5', value: 'E'},
     ],
+    round : 1,
+    url: "",
   },
 
-  setStatus: function(e) {
-    //this.data.input_val = e.detail.value 
-    this.setData({
-      input_val: e.detail.value
-    })
-    if(this.data.input_val == '12345') {
-      ///this.data.submit_status = true
+  onSubmit: function(e) {
+    this.data.round++;
+    if(this.data.round<=11) {
       this.setData({
-        submit_status: true
+        url: "pics/img" + this.data.round + ".jpg",
+      })
+      console.log(this.data.round);
+    } else {
+      wx.navigateTo({
+        url: '/pages/Results/result',
       })
     }
-    console.log(this.data.input_val + " " + this.data.submit_status)
   },
 
   /**
@@ -42,14 +44,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      url: "pics/img1.jpg"
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad()
   },
 
   /**
