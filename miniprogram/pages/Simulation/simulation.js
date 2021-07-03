@@ -16,9 +16,11 @@ Page({
       {name: '4', value: 'D'},
       {name: '5', value: 'E'},
     ],
-    price_list:[
+    stock_list:[
       {
+        number: "0",
         name: "A",
+        buy: "买",
         prices: [
           {name: '1', value: '1000'},
           {name: '2', value: '950'},
@@ -37,7 +39,9 @@ Page({
         ]
       },
       {
+        number: "1",
         name: "B",
+        buy: "买",
         prices: [
           {name: '1', value: '1100'},
           {name: '2', value: '1090'},
@@ -56,7 +60,9 @@ Page({
         ]
       },
       {
+        number: "2",
         name: "C",
+        buy: "买",
         prices: [
           {name: '1', value: '1200'},
           {name: '2', value: '1170'},
@@ -75,7 +81,9 @@ Page({
         ]
       },
       {
+        number: "3",
         name: "D",
+        buy: "买",
         prices: [
           {name: '1', value: '1300'},
           {name: '2', value: '1290'},
@@ -94,7 +102,9 @@ Page({
         ]
       },
       {
+        number: "4",
         name: "E",
+        buy: "买",
         prices: [
           {name: '1', value: '1400'},
           {name: '2', value: '1430'},
@@ -117,11 +127,22 @@ Page({
     url: "",
   },
 
+  onBuy: function(e) {
+    if(e.currentTarget.dataset.buy=="买") {
+      this.data.stock_list[e.currentTarget.dataset.stock].buy = "卖";
+    } else {
+      this.data.stock_list[e.currentTarget.dataset.stock].buy = "买";
+    }
+    this.setData({
+      stock_list: this.data.stock_list
+    })
+  },
+
   onSubmit: function(e) {
     this.setData({
       round: this.data.round+1,
     });
-    if(this.data.round<=11) {
+    if(this.data.round<11) {
       this.setData({
         url: "pics/img" + this.data.round + ".jpg",
       })

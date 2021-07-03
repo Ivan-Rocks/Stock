@@ -18,12 +18,12 @@
 </view>
 
 <view>
-  <label class="outerloop" wx:for="{{price_list}}">
+  <label class="outerloop" wx:for="{{stock_list}}">
     <view class="horizontal-layout">
       <text class="stock-label">{{item.name}}</text>
       <text class="stock-price">{{item.prices[round].value}}</text>
       <text class="stock-possibility">10% 30% 50%</text>
-      <button type="primary" style="width:20vw">买</button>
+      <button type="primary" style="width:20vw" bindtap="onBuy" data-stock="{{item.number}}" data-buy="{{item.buy}}">{{item.buy}}</button>
       <input type="text" placeholder="交易量" class="stock-number"> </input>
     </view>
   </label>
