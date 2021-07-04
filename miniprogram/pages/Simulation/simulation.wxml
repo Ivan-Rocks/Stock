@@ -1,8 +1,8 @@
 <!--miniprogram/pages/Simulation/simulation.wxml-->
 <view class="box">
-  <view>余额: {{submit_status}}</view>
+  <view>余额: {{balance}}</view>
   <view class="middle-box">第{{round}}轮</view>
-  <view class="right-box">净利: {{submit_status}}</view>
+  <view class="right-box">净利: {{profit}}</view>
 </view>
 
 <view>
@@ -24,11 +24,11 @@
       <text class="stock-price">{{item.prices[round].value}}</text>
       <text class="stock-possibility">10% 30% 50%</text>
       <button type="primary" style="width:20vw" bindtap="onBuy" data-stock="{{item.number}}" data-buy="{{item.buy}}">{{item.buy}}</button>
-      <input type="text" placeholder="交易量" class="stock-number"> </input>
+      <input type="number" placeholder="交易量" class="stock-number" bindinput="onInput" data-stock="{{item.number}}" data-buy="{{item.buy}}"> </input>
     </view>
   </label>
 </view>
  
 <view>
-  <button type="primary" bindtap="onSubmit">提交本次操作</button>
+  <button type="primary" bindtap="onSubmit" disabled="{{!submit_status}}">提交本次操作</button>
 </view>

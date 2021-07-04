@@ -7,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    submit_status : false,
+    //Simulation
+    balance: "10000",
+    profit: "0",
+    
+    submit_status : true,
     input_val : '',
     stock_name:[
       {name: '1', value: 'A'},
@@ -134,8 +138,12 @@ Page({
       this.data.stock_list[e.currentTarget.dataset.stock].buy = "买";
     }
     this.setData({
-      stock_list: this.data.stock_list
+      stock_list: this.data.stock_list,
     })
+  },
+
+  onInput: function(e) {
+    console.log(e.currentTarget.dataset.stock)
   },
 
   onSubmit: function(e) {
