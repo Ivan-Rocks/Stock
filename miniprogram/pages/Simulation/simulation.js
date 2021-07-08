@@ -7,10 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //Simulation
+    //Updated per round
     balance: "10000",
     profit: "0",
     
+    //Updated per operation
+    current_balance: "10000",
+    current_profit: "0",
+
+
     submit_status : true,
     input_val : '',
     stock_name:[
@@ -20,11 +25,15 @@ Page({
       {name: '4', value: 'D'},
       {name: '5', value: 'E'},
     ],
+
     stock_list:[
       {
         number: "0",
         name: "A",
         buy: "买",
+        amount: "0",
+        input_value: "",
+        current_amount: "0",
         prices: [
           {name: '1', value: '1000'},
           {name: '2', value: '950'},
@@ -46,6 +55,8 @@ Page({
         number: "1",
         name: "B",
         buy: "买",
+        amount: "0",
+        input_value: "",
         prices: [
           {name: '1', value: '1100'},
           {name: '2', value: '1090'},
@@ -67,6 +78,7 @@ Page({
         number: "2",
         name: "C",
         buy: "买",
+        amount: "0",
         prices: [
           {name: '1', value: '1200'},
           {name: '2', value: '1170'},
@@ -88,6 +100,7 @@ Page({
         number: "3",
         name: "D",
         buy: "买",
+        amount: "0",
         prices: [
           {name: '1', value: '1300'},
           {name: '2', value: '1290'},
@@ -109,6 +122,7 @@ Page({
         number: "4",
         name: "E",
         buy: "买",
+        amount: "0",
         prices: [
           {name: '1', value: '1400'},
           {name: '2', value: '1430'},
@@ -132,6 +146,8 @@ Page({
   },
 
   onBuy: function(e) {
+    console.log("shoot");
+    
     if(e.currentTarget.dataset.buy=="买") {
       this.data.stock_list[e.currentTarget.dataset.stock].buy = "卖";
     } else {
@@ -144,6 +160,23 @@ Page({
 
   onInput: function(e) {
     console.log(e.currentTarget.dataset.stock)
+    this.data.stock_list[e.currentTarget.dataset.stock].input_value = e.detail.value;
+    if(e.detail.value.length == 0) {
+      this.data.stock_list[e.currentTarget.dataset.stock].input_value = 0;
+    }
+    this.setData({
+      stock_list: this.data.stock_list,
+    })
+  },
+
+  onReset: function(e) {
+    for(var i=0;i<5;i++) {
+      this.data.stock_list[i].buy="买";
+      this.data.stock_list[i].input_value="";
+    }
+    this.setData({
+      stock_list: this.data.stock_list,
+    })
   },
 
   onSubmit: function(e) {

@@ -27,14 +27,22 @@
 
 }
 
+.stock-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:red;
+}
+
+
 .stock-price {
   color: orange;
-  margin-right: 20rpx;
+  margin-right: 50rpx;
 }
 
 .stock-possibility {
   color: blue;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 
 .stock-purchase {
@@ -46,7 +54,10 @@
   margin-right: 5rpx;
 }
 
-.stock-number {
-  margin-left: 10rpx;
+.reset-button {
+  float: left;
 }
 
+.submit-button {
+  float: right;
+}

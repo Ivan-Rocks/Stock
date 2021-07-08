@@ -10,25 +10,26 @@
 </view>
 
 <view>
-  <text style="margin-right: 10rpx">股票</text>
+  <text style="margin-left:20rpx; margin-right: 20rpx">股票</text>
   <text style="margin-right: 10rpx">现报价</text>
-  <text style="margin-right: 50rpx">历史概率</text>
-  <text style="margin-right: 50rpx">买/卖</text>
+  <text style="margin-right: 50rpx">持仓</text>
+  <text style="margin-right: 60rpx">买/卖</text>
   <text>交易量</text>
 </view>
 
 <view>
   <label class="outerloop" wx:for="{{stock_list}}">
     <view class="horizontal-layout">
-      <text class="stock-label">{{item.name}}</text>
+      <button class="stock-number" style="width:10vw">{{item.name}}</button>
       <text class="stock-price">{{item.prices[round].value}}</text>
-      <text class="stock-possibility">10% 30% 50%</text>
-      <button type="primary" style="width:20vw" bindtap="onBuy" data-stock="{{item.number}}" data-buy="{{item.buy}}">{{item.buy}}</button>
-      <input type="number" placeholder="交易量" class="stock-number" bindinput="onInput" data-stock="{{item.number}}" data-buy="{{item.buy}}"> </input>
+      <text class="stock-possibility">{{item.amount}}</text>
+      <button type="primary" style="width:20vw;; margin-right:10rpx" bindtap="onBuy" data-stock="{{item.number}}" data-buy="{{item.buy}}">{{item.buy}}</button>
+      <input type="number" placeholder="交易量" bindinput="onInput" data-stock="{{item.number}}" value='{{item.input_value}}'> </input>
     </view>
   </label>
 </view>
  
 <view>
-  <button type="primary" bindtap="onSubmit" disabled="{{!submit_status}}">提交本次操作</button>
+  <button type="primary" style="width:40vw"class="reset-button" bindtap="onReset">重置</button>
+  <button type="primary" style="width:40vw" class="submit-button" bindtap="onSubmit" disabled="{{!submit_status}}">提交</button>
 </view>
