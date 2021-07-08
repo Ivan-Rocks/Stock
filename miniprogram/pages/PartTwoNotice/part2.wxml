@@ -3,6 +3,9 @@
   <text>第二部分：股票交易模拟</text>
 </view>
 <view>
+  <text style="color:red; font-size:40">当余额为负数或持仓量为负数时提交无效！</text>
+</view>
+<view>
   <button type="primary" bindtap="TurnPage">继续</button>
 </view>
 

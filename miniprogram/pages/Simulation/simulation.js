@@ -8,16 +8,13 @@ Page({
    */
   data: {
     //Updated per round
-    balance: "10000",
-    profit: "0",
+    balance: 10000,
+    profit: 0,
     
     //Updated per operation
-    current_balance: "10000",
-    current_profit: "0",
+    current_balance: 10000,
+    current_profit: 0,
 
-
-    submit_status : true,
-    input_val : '',
     stock_name:[
       {name: '1', value: 'A'},
       {name: '2', value: 'B'},
@@ -32,12 +29,12 @@ Page({
         name: "A",
         buy: "买",
         amount: "0",
-        input_value: "",
+        input_value: 0,
         current_amount: "0",
         prices: [
-          {name: '1', value: '1000'},
-          {name: '2', value: '950'},
-          {name: '3', value: '1000'},
+          {name: '1', value: 1000},
+          {name: '2', value: 950},
+          {name: '3', value: 1000},
           {name: '4', value: '970'},
           {name: '5', value: '1000'},
           {name: '6', value: '1030'},
@@ -159,17 +156,26 @@ Page({
   },
 
   onInput: function(e) {
-    console.log(e.currentTarget.dataset.stock)
+    console.log(parseInt(e.detail.value))
     this.data.stock_list[e.currentTarget.dataset.stock].input_value = e.detail.value;
     if(e.detail.value.length == 0) {
       this.data.stock_list[e.currentTarget.dataset.stock].input_value = 0;
     }
+    /*
+    if(this.data.stock_list[e.currentTarget.dataset.stock].buy=="买") {
+      this.data.current_balance -= e.currentTarget.dataset.price * parseInt(e.detail.value);
+    } else {
+      this.data.current_balance += e.currentTarget.dataset.price * parseInt(e.detail.value);
+    }*/
     this.setData({
       stock_list: this.data.stock_list,
+      current_balance: this.data.current_balance,
     })
   },
 
   onReset: function(e) {
+    this.data.current_balance = balance;
+    this.data.current_profit = profit;
     for(var i=0;i<5;i++) {
       this.data.stock_list[i].buy="买";
       this.data.stock_list[i].input_value="";
