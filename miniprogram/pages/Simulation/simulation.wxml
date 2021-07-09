@@ -22,9 +22,9 @@
     <view class="horizontal-layout">
       <button class="stock-number" style="width:10vw">{{item.name}}</button>
       <text class="stock-price">{{item.prices[round].value}}</text>
-      <text class="stock-possibility">{{item.amount}}</text>
+      <text class="stock-possibility">{{item.current_hold}}</text>
       <button type="primary" style="width:20vw;; margin-right:10rpx" bindtap="onBuy" data-stock="{{item.number}}" data-buy="{{item.buy}}">{{item.buy}}</button>
-      <input type="number" placeholder="交易量" bindinput="onInput" data-stock="{{item.number}}" data-price="{{item.prices[round].value}}" value='{{item.input_value}}'> </input>
+      <input type="number" placeholder="交易量" bindinput="onInput" data-stock="{{item.number}}" data-price="{{item.prices[round].value}}" > </input>
     </view>
   </label>
 </view>

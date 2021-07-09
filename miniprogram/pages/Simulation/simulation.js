@@ -28,113 +28,125 @@ Page({
         number: "0",
         name: "A",
         buy: "买",
-        amount: "0",
+        hold: 0,
+        //For this Round:
+        current_hold: 0,
         input_value: 0,
-        current_amount: "0",
         prices: [
-          {name: '1', value: 1000},
-          {name: '2', value: 950},
-          {name: '3', value: 1000},
-          {name: '4', value: '970'},
-          {name: '5', value: '1000'},
-          {name: '6', value: '1030'},
-          {name: '7', value: '1060'},
-          {name: '8', value: '1050'},
-          {name: '9', value: '1080'},
-          {name: '10', value: '1050'},
-          {name: '11', value: '1080'},
-          {name: '12', value: '1110'},
-          {name: '13', value: '1140'},
-          {name: '14', value: '1110'},
+          {name: 1, value: 1000},
+          {name: 2, value: 950},
+          {name: 3, value: 1000},
+          {name: '4', value: 970},
+          {name: '5', value: 1000},
+          {name: '6', value: 1030},
+          {name: '7', value: 1060},
+          {name: '8', value: 1050},
+          {name: '9', value: 1080},
+          {name: '10', value: 1050},
+          {name: '11', value: 1080},
+          {name: '12', value: 1110},
+          {name: '13', value: 1140},
+          {name: '14', value: 1110},
         ]
       },
       {
         number: "1",
         name: "B",
         buy: "买",
-        amount: "0",
-        input_value: "",
+        hold: 0,
+        //For this Round:
+        current_hold: 0,
+        input_value: 0,
         prices: [
-          {name: '1', value: '1100'},
-          {name: '2', value: '1090'},
-          {name: '3', value: '1040'},
-          {name: '4', value: '1070'},
-          {name: '5', value: '1020'},
-          {name: '6', value: '990'},
-          {name: '7', value: '1020'},
-          {name: '8', value: '1070'},
-          {name: '9', value: '1100'},
-          {name: '10', value: '1130'},
-          {name: '11', value: '1160'},
-          {name: '12', value: '1170'},
-          {name: '13', value: '1180'},
-          {name: '14', value: '1130'},
+          {name: '1', value: 1100},
+          {name: '2', value: 1090},
+          {name: '3', value: 1040},
+          {name: '4', value: 1070},
+          {name: '5', value: 1020},
+          {name: '6', value: 990},
+          {name: '7', value: 1020},
+          {name: '8', value: 1070},
+          {name: '9', value: 1100},
+          {name: '10', value: 1130},
+          {name: '11', value: 1160},
+          {name: '12', value: 1170},
+          {name: '13', value: 1180},
+          {name: '14', value: 1130},
         ]
       },
       {
         number: "2",
         name: "C",
         buy: "买",
-        amount: "0",
+        hold: 0,
+        //For this Round:
+        current_hold: 0,
+        input_value: 0,
         prices: [
-          {name: '1', value: '1200'},
-          {name: '2', value: '1170'},
-          {name: '3', value: '1220'},
-          {name: '4', value: '1250'},
-          {name: '5', value: '1280'},
-          {name: '6', value: '1310'},
-          {name: '7', value: '1280'},
-          {name: '8', value: '1310'},
-          {name: '9', value: '1300'},
-          {name: '10', value: '1350'},
-          {name: '11', value: '1340'},
-          {name: '12', value: '1350'},
-          {name: '13', value: '1340'},
-          {name: '14', value: '1350'},
+          {name: '1', value: 1200},
+          {name: '2', value: 1170},
+          {name: '3', value: 1220},
+          {name: '4', value: 1250},
+          {name: '5', value: 1280},
+          {name: '6', value: 1310},
+          {name: '7', value: 1280},
+          {name: '8', value: 1310},
+          {name: '9', value: 1300},
+          {name: '10', value: 1350},
+          {name: '11', value: 1340},
+          {name: '12', value: 1350},
+          {name: '13', value: 1340},
+          {name: '14', value: 1350},
         ]
       },
       {
         number: "3",
         name: "D",
         buy: "买",
-        amount: "0",
+        hold: 0,
+        //For this Round:
+        current_hold: 0,
+        input_value: 0,
         prices: [
-          {name: '1', value: '1300'},
-          {name: '2', value: '1290'},
-          {name: '3', value: '1280'},
-          {name: '4', value: '1250'},
-          {name: '5', value: '1200'},
-          {name: '6', value: '1190'},
-          {name: '7', value: '1180'},
-          {name: '8', value: '1230'},
-          {name: '9', value: '1280'},
-          {name: '10', value: '1230'},
-          {name: '11', value: '1260'},
-          {name: '12', value: '1270'},
-          {name: '13', value: '1300'},
-          {name: '14', value: '1310'},
+          {name: '1', value: 1300},
+          {name: '2', value: 1290},
+          {name: '3', value: 1280},
+          {name: '4', value: 1250},
+          {name: '5', value: 1200},
+          {name: '6', value: 1190},
+          {name: '7', value: 1180},
+          {name: '8', value: 1230},
+          {name: '9', value: 1280},
+          {name: '10', value: 1230},
+          {name: '11', value: 1260},
+          {name: '12', value: 1270},
+          {name: '13', value: 1300},
+          {name: '14', value: 1310},
         ]
       },
       {
         number: "4",
         name: "E",
         buy: "买",
-        amount: "0",
+        hold: 0,
+        //For this Round:
+        current_hold: 0,
+        input_value: 0,
         prices: [
-          {name: '1', value: '1400'},
-          {name: '2', value: '1430'},
-          {name: '3', value: '1440'},
-          {name: '4', value: '1390'},
-          {name: '5', value: '1400'},
-          {name: '6', value: '1450'},
-          {name: '7', value: '1400'},
-          {name: '8', value: '1410'},
-          {name: '9', value: '1380'},
-          {name: '10', value: '1410'},
-          {name: '11', value: '1400'},
-          {name: '12', value: '1370'},
-          {name: '13', value: '1380'},
-          {name: '14', value: '1430'},
+          {name: '1', value: 1400},
+          {name: '2', value: 1430},
+          {name: '3', value: 1440},
+          {name: '4', value: 1390},
+          {name: '5', value: 1400},
+          {name: '6', value: 1450},
+          {name: '7', value: 1400},
+          {name: '8', value: 1410},
+          {name: '9', value: 1380},
+          {name: '10', value: 1410},
+          {name: '11', value: 1400},
+          {name: '12', value: 1370},
+          {name: '13', value: 1380},
+          {name: '14', value: 1430},
         ]
       },
     ],
@@ -143,8 +155,6 @@ Page({
   },
 
   onBuy: function(e) {
-    console.log("shoot");
-    
     if(e.currentTarget.dataset.buy=="买") {
       this.data.stock_list[e.currentTarget.dataset.stock].buy = "卖";
     } else {
@@ -153,14 +163,17 @@ Page({
     this.setData({
       stock_list: this.data.stock_list,
     })
+    this.Update();
   },
 
   onInput: function(e) {
-    console.log(parseInt(e.detail.value))
-    this.data.stock_list[e.currentTarget.dataset.stock].input_value = e.detail.value;
-    if(e.detail.value.length == 0) {
+    
+    if(e.detail.value.length==0) {
       this.data.stock_list[e.currentTarget.dataset.stock].input_value = 0;
+    } else {
+      this.data.stock_list[e.currentTarget.dataset.stock].input_value = parseInt(e.detail.value);
     }
+    console.log(this.data.stock_list[e.currentTarget.dataset.stock].input_value); 
     /*
     if(this.data.stock_list[e.currentTarget.dataset.stock].buy=="买") {
       this.data.current_balance -= e.currentTarget.dataset.price * parseInt(e.detail.value);
@@ -171,6 +184,7 @@ Page({
       stock_list: this.data.stock_list,
       current_balance: this.data.current_balance,
     })
+    this.Update();
   },
 
   onReset: function(e) {
@@ -199,6 +213,9 @@ Page({
         url: '/pages/Results/result',
       })
     }
+  },
+
+  Update: function() {
   },
 
   /**
