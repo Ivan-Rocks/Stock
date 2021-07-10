@@ -173,16 +173,8 @@ Page({
     } else {
       this.data.stock_list[e.currentTarget.dataset.stock].input_value = parseInt(e.detail.value);
     }
-    console.log(this.data.stock_list[e.currentTarget.dataset.stock].input_value); 
-    /*
-    if(this.data.stock_list[e.currentTarget.dataset.stock].buy=="买") {
-      this.data.current_balance -= e.currentTarget.dataset.price * parseInt(e.detail.value);
-    } else {
-      this.data.current_balance += e.currentTarget.dataset.price * parseInt(e.detail.value);
-    }*/
     this.setData({
       stock_list: this.data.stock_list,
-      current_balance: this.data.current_balance,
     })
     this.Update();
   },
@@ -192,7 +184,8 @@ Page({
     this.data.current_profit = profit;
     for(var i=0;i<5;i++) {
       this.data.stock_list[i].buy="买";
-      this.data.stock_list[i].input_value="";
+      this.data.stock_list[i].current_hold = this.data.stock_list[i].hold;
+      this.data.stock_list[i].input_value=0;
     }
     this.setData({
       stock_list: this.data.stock_list,
@@ -216,6 +209,20 @@ Page({
   },
 
   Update: function() {
+    var sales_index = 0;
+    console.log(sales_index);
+    for(var i=0;i<5;i++) {
+      if(this.data.stock_list[i].buy=="买") {
+        this.data.stock_list[i].current_hold = this.data.stock_list[i].hold + this.data.stock_list[i].input_value;
+      } else {
+        this.data.stock_list[i].current_hold = this.data.stock_list[i].hold - this.data.stock_list[i].input_value;
+      }
+    }
+    this.setData({
+      stock_list: this.data.stock_list,
+      current_balance: this.data.current_balance,
+      current_profit: this.data.current_profit,
+    })
   },
 
   /**
