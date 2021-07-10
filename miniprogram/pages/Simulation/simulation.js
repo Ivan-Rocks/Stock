@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //如果修改总金额的话需要修改仨！
+    original_balance: 10000,
     //Updated per round
     balance: 10000,
     profit: 0,
@@ -31,7 +33,8 @@ Page({
         hold: 0,
         //For this Round:
         current_hold: 0,
-        input_value: 0,
+        input_temp: "",
+        num: 0,
         prices: [
           {name: 1, value: 1000},
           {name: 2, value: 950},
@@ -56,7 +59,8 @@ Page({
         hold: 0,
         //For this Round:
         current_hold: 0,
-        input_value: 0,
+        input_temp: "",
+        num: 0,
         prices: [
           {name: '1', value: 1100},
           {name: '2', value: 1090},
@@ -81,7 +85,8 @@ Page({
         hold: 0,
         //For this Round:
         current_hold: 0,
-        input_value: 0,
+        input_temp: "",
+        num: 0,
         prices: [
           {name: '1', value: 1200},
           {name: '2', value: 1170},
@@ -106,7 +111,8 @@ Page({
         hold: 0,
         //For this Round:
         current_hold: 0,
-        input_value: 0,
+        input_temp: "",
+        num: 0,
         prices: [
           {name: '1', value: 1300},
           {name: '2', value: 1290},
@@ -131,7 +137,8 @@ Page({
         hold: 0,
         //For this Round:
         current_hold: 0,
-        input_value: 0,
+        input_temp: "",
+        num: 0,
         prices: [
           {name: '1', value: 1400},
           {name: '2', value: 1430},
@@ -167,11 +174,11 @@ Page({
   },
 
   onInput: function(e) {
-    
+    this.data.stock_list[e.currentTarget.dataset.stock].input_temp = e.detail.value;
     if(e.detail.value.length==0) {
-      this.data.stock_list[e.currentTarget.dataset.stock].input_value = 0;
+      this.data.stock_list[e.currentTarget.dataset.stock].num = 0;
     } else {
-      this.data.stock_list[e.currentTarget.dataset.stock].input_value = parseInt(e.detail.value);
+      this.data.stock_list[e.currentTarget.dataset.stock].num = parseInt(e.detail.value);
     }
     this.setData({
       stock_list: this.data.stock_list,
@@ -180,19 +187,39 @@ Page({
   },
 
   onReset: function(e) {
-    this.data.current_balance = balance;
-    this.data.current_profit = profit;
+    this.data.current_balance = this.data.balance;
+    this.data.current_profit = this.data.profit;
     for(var i=0;i<5;i++) {
       this.data.stock_list[i].buy="买";
       this.data.stock_list[i].current_hold = this.data.stock_list[i].hold;
-      this.data.stock_list[i].input_value=0;
+      this.data.stock_list[i].num= this.data.stock_list[i].hold;
+      this.data.stock_list[i].input_temp="";
     }
     this.setData({
       stock_list: this.data.stock_list,
+      current_balance: this.data.current_balance,
+      current_profit: this.data.current_profit,
     })
   },
 
   onSubmit: function(e) {
+    //Pre Submit: Update data
+    this.setData({
+      balance: this.data.current_balance,
+      profit: this.data.current_profit,
+    })
+    for(var i=0;i<5;i++) {
+      this.data.stock_list[i].buy="买";
+      this.data.stock_list[i].hold = this.data.stock_list[i].current_hold;
+      this.data.stock_list[i].current_hold = this.data.stock_list[i].hold;
+      this.data.stock_list[i].num= 0;
+      this.data.stock_list[i].input_temp="";
+    }
+    this.setData({
+      stock_list: this.data.stock_list,
+    })
+
+    //Post Submit: update URL and round
     this.setData({
       round: this.data.round+1,
     });
@@ -200,7 +227,7 @@ Page({
       this.setData({
         url: "pics/img" + this.data.round + ".jpg",
       })
-      console.log(this.data.round);
+      //console.log(this.data.round);
     } else {
       wx.navigateTo({
         url: '/pages/Results/result',
@@ -210,19 +237,23 @@ Page({
 
   Update: function() {
     var sales_index = 0;
-    console.log(sales_index);
+    this.data.current_balance = this.data.balance;
     for(var i=0;i<5;i++) {
       if(this.data.stock_list[i].buy=="买") {
-        this.data.stock_list[i].current_hold = this.data.stock_list[i].hold + this.data.stock_list[i].input_value;
+        this.data.stock_list[i].current_hold = this.data.stock_list[i].hold + this.data.stock_list[i].num;
+        this.data.current_balance -= this.data.stock_list[i].prices[this.data.round].value * this.data.stock_list[i].num;
       } else {
-        this.data.stock_list[i].current_hold = this.data.stock_list[i].hold - this.data.stock_list[i].input_value;
+        this.data.stock_list[i].current_hold = this.data.stock_list[i].hold - this.data.stock_list[i].num;
+        this.data.current_balance += this.data.stock_list[i].prices[this.data.round].value * this.data.stock_list[i].num;
       }
     }
+    this.data.current_profit = this.data.current_balance - this.data.original_balance;
     this.setData({
       stock_list: this.data.stock_list,
       current_balance: this.data.current_balance,
       current_profit: this.data.current_profit,
     })
+    console.log(this.data.balance);
   },
 
   /**
