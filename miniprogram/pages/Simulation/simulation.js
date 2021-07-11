@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    submit_status: false,
     //如果修改总金额的话需要修改仨！
     original_balance: 10000,
     //Updated per round
@@ -218,7 +219,6 @@ Page({
     this.setData({
       stock_list: this.data.stock_list,
     })
-
     //Post Submit: update URL and round
     this.setData({
       round: this.data.round+1,
@@ -253,8 +253,32 @@ Page({
       current_balance: this.data.current_balance,
       current_profit: this.data.current_profit,
     })
-    console.log(this.data.balance);
+    //console.log(this.data.balance);
+    this.Check();
   },
+
+  Check: function() {
+    var flag= 0;
+    if(this.data.current_balance<0) {
+      flag=1;
+    }
+    for(var i=0;i<5;i++) {
+      if(this.data.stock_list[i].current_hold<0) {
+        flag=1;
+      }
+    }
+    if(flag == 0) {
+      this.setData({
+        submit_status: true,
+      })
+    } else {
+      this.setData({
+        submit_status: false,
+      })
+    }
+    console.log(flag);
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

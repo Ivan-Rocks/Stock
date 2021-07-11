@@ -31,5 +31,5 @@
  
 <view>
   <button type="primary" style="width:40vw"class="reset-button" bindtap="onReset">重置</button>
-  <button type="primary" style="width:40vw" class="submit-button" bindtap="onSubmit">提交</button>
+  <button type="primary" style="width:40vw" class="submit-button" bindtap="onSubmit" disabled="{{!submit_status}}">提交</button>
 </view>
