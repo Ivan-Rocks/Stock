@@ -37,9 +37,10 @@ Page({
         input_temp: "",
         num: 0,
         prices: [
-          {name: 1, value: 1000},
-          {name: 2, value: 950},
-          {name: 3, value: 1000},
+          {name: 0, value: 0},
+          //{name: 1, value: 1000},
+          //{name: 2, value: 950},
+          //{name: 3, value: 1000},
           {name: '4', value: 970},
           {name: '5', value: 1000},
           {name: '6', value: 1030},
@@ -63,9 +64,10 @@ Page({
         input_temp: "",
         num: 0,
         prices: [
-          {name: '1', value: 1100},
-          {name: '2', value: 1090},
-          {name: '3', value: 1040},
+          {name: 0, value: 0},
+          //{name: '1', value: 1100},
+          //{name: '2', value: 1090},
+          //{name: '3', value: 1040},
           {name: '4', value: 1070},
           {name: '5', value: 1020},
           {name: '6', value: 990},
@@ -89,9 +91,10 @@ Page({
         input_temp: "",
         num: 0,
         prices: [
-          {name: '1', value: 1200},
-          {name: '2', value: 1170},
-          {name: '3', value: 1220},
+          {name: 0, value: 0},
+          //{name: '1', value: 1200},
+          //{name: '2', value: 1170},
+          //{name: '3', value: 1220},
           {name: '4', value: 1250},
           {name: '5', value: 1280},
           {name: '6', value: 1310},
@@ -115,9 +118,10 @@ Page({
         input_temp: "",
         num: 0,
         prices: [
-          {name: '1', value: 1300},
-          {name: '2', value: 1290},
-          {name: '3', value: 1280},
+          {name: 0, value: 0},
+          //{name: '1', value: 1300},
+          //{name: '2', value: 1290},
+          //{name: '3', value: 1280},
           {name: '4', value: 1250},
           {name: '5', value: 1200},
           {name: '6', value: 1190},
@@ -141,6 +145,7 @@ Page({
         input_temp: "",
         num: 0,
         prices: [
+          {name: 0, value: 0},
           {name: '1', value: 1400},
           {name: '2', value: 1430},
           {name: '3', value: 1440},
@@ -200,6 +205,7 @@ Page({
       stock_list: this.data.stock_list,
       current_balance: this.data.current_balance,
       current_profit: this.data.current_profit,
+      submit_status: false,
     })
   },
 
@@ -209,6 +215,7 @@ Page({
       balance: this.data.current_balance,
       profit: this.data.current_profit,
     })
+    app.globalData.profit = this.data.profit;
     for(var i=0;i<5;i++) {
       this.data.stock_list[i].buy="买";
       this.data.stock_list[i].hold = this.data.stock_list[i].current_hold;
@@ -222,8 +229,9 @@ Page({
     //Post Submit: update URL and round
     this.setData({
       round: this.data.round+1,
+      submit_status: false,
     });
-    if(this.data.round<11) {
+    if(this.data.round<=10) {
       this.setData({
         url: "pics/img" + this.data.round + ".jpg",
       })

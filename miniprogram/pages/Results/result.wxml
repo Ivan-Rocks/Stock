@@ -1,7 +1,18 @@
 <!--miniprogram/pages/Results/result.wxml-->
 <view>
-  <text>恭喜您完成测试！</text>
+  <text>恭喜您完成测试！请将本页截图并发给管理员</text>
 </view>
 <view>
-  <text>{{basic_answer}}</text>
+  <text>{{name}}</text>
+  <text>{{name}}你一共赚了{{profit}}元</text>
+
+</view>
+<view>
+  <text>{{name}}|{{gender}}|{{age}}|{{diploma}}|{{occupation}}|{{income}}|{{stock_experience}}|</text>
+  <text>{{investment_experience}}|{{frequency}}|{{choose1}}</text>
+</view>
+<view>
+  <label class="outerloop" wx:for="{{personality_answers}}">
+    <text>{{item}}</text>
+  </label>
 </view>

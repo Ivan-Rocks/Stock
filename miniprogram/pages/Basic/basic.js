@@ -111,7 +111,7 @@ setName: function (e) {
 },
 
 setOccupation: function (e) {
-  app.globalData.p = e.detail.value
+  app.globalData.occupation = e.detail.value
   console.log(app.globalData.occupation)
 },
 

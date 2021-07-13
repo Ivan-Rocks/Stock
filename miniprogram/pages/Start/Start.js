@@ -11,6 +11,7 @@ Page({
   TurnPage: function(event) {
     wx.navigateTo({
       url: '/pages/PartOneNotice/part1',
+      //url: '/pages/Results/result'
     })
   },
 
