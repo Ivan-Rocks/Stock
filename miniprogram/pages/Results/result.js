@@ -19,6 +19,7 @@ Page({
     frequency: "",
     choose1: "",
     personality_answers: new Array(),
+    simulation_answers: new Array(),
   },
 
   /**
@@ -41,8 +42,8 @@ Page({
 
       profit: app.globalData.profit,
 
-      basic_anwers: this.data.basic_anwers,
       personality_answers: app.globalData.personality_answers,
+      simulation_answers: app.globalData.simulation_answers,
     })
   },
 

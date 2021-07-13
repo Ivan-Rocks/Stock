@@ -60,7 +60,7 @@
 </view>
 <view>
   <text>请问您的投资经验可以被概括为：</text>
-  <radio-group class="radio-group" bindchange="stock_experienceChange">
+  <radio-group class="radio-group" bindchange="investment_experienceChange">
     <label class="radio" wx:for="{{investment_experienceChoices}}">
        <view>
       <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}

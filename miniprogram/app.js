@@ -29,6 +29,9 @@ App({
 
       //Personality
       personality_answers: new Array(),
+
+      //Simulation operations
+      simulation_answers: new Array(),
     }
   }
 })

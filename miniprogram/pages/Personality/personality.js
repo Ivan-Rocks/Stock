@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    submit_status:false,
     questions:[
       {name: '1', value: '我常常担心有什么不好的事情要发生'},
       {name: '2', value: '我常感到害怕'},
@@ -61,6 +62,23 @@ Page({
   answerChange: function(e) {
     app.globalData.personality_answers[e.currentTarget.dataset.name]= e.detail.value
     console.log(app.globalData.personality_answers)
+    if(app.globalData.personality_answers.length==41) {
+      var flag=0;
+      for(var i=1;i<=40;i++) {
+        if(app.globalData.personality_answers[i]==null) {
+          flag=1;
+        }
+      }
+      if(flag==1) {
+        this.setData({
+          submit_status: false,
+        })
+      } else {
+        this.setData({
+          submit_status: true,
+        })
+      }
+    }
   },
 
   TurnPage: function(event) {

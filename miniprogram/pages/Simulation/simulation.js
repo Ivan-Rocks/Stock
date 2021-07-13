@@ -216,6 +216,10 @@ Page({
       profit: this.data.current_profit,
     })
     app.globalData.profit = this.data.profit;
+    //Upload answers
+    app.globalData.simulation_answers.push(this.data.stock_list);
+    //console.log(app.globalData.simulation_answers[0][0].current_hold);
+    //Reset variables
     for(var i=0;i<5;i++) {
       this.data.stock_list[i].buy="买";
       this.data.stock_list[i].hold = this.data.stock_list[i].current_hold;
@@ -284,7 +288,7 @@ Page({
         submit_status: false,
       })
     }
-    console.log(flag);
+    //console.log(flag);
   },
 
 

@@ -3,5 +3,8 @@
   <text>第一部分：个人信息采集</text>
 </view>
 <view>
+  <text style="color: red">请回答完所有问题之后提交</text>
+</view>
+<view>
   <button type="primary" bindtap="TurnPage">继续</button>
 </view>
