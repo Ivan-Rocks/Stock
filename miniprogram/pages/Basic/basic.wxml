@@ -1,21 +1,21 @@
 <!--miniprogram/pages/Basic/basic.wxml-->
-<view>
+<view style="margin:20rpx">
   <text>第一部分（1/2）：个人信息采集</text>
 </view>
-<view>
-  <text>请问您的姓名是：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您的姓名是：</text>
   <input type="text" bindinput="setName" placeholder="请输入姓名"> </input>
 </view>
-<view>
-  <text>请问您的性别是：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您的性别是：</text>
   <radio-group class="radio-group" bindchange="genderChange">
     <label class="radio" wx:for="{{genderChoices}}">
       <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
     </label>
   </radio-group>
 </view>
-<view>
-  <text>请问您的年龄是：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您的年龄是：</text>
   <radio-group class="radio-group" bindchange="ageChange">
     <label class="radio" wx:for="{{ageChoices}}">
        <view>
@@ -24,8 +24,8 @@
     </label>
   </radio-group>
 </view>
-<view>
-  <text>请问您的最高学历是：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您的最高学历是：</text>
   <radio-group class="radio-group" bindchange="diplomaChange">
     <label class="radio" wx:for="{{diplomaChoices}}">
        <view>
@@ -34,12 +34,12 @@
     </label>
   </radio-group>
 </view>
-<view>
-  <text>请问您目前的职业是：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您目前的职业是：</text>
   <input type="text" bindinput="setOccupation" placeholder="请输入职业"> </input>
 </view>
-<view>
-  <text>请问您个人最近3年的平均收入是：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您个人最近3年的平均收入是：</text>
   <radio-group class="radio-group" bindchange="incomeChange">
     <label class="radio" wx:for="{{incomeChoices}}">
        <view>
@@ -48,8 +48,8 @@
     </label>
   </radio-group>
 </view>
-<view>
-  <text>请问您是否炒股：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您是否炒股：</text>
   <radio-group class="radio-group" bindchange="stock_experienceChange">
     <label class="radio" wx:for="{{stock_experienceChoices}}">
        <view>
@@ -58,8 +58,8 @@
     </label>
   </radio-group>
 </view>
-<view>
-  <text>请问您的投资经验可以被概括为：</text>
+<view style="margin:20rpx">
+  <text style="color:green">请问您的投资经验可以被概括为：</text>
   <radio-group class="radio-group" bindchange="investment_experienceChange">
     <label class="radio" wx:for="{{investment_experienceChoices}}">
        <view>
@@ -68,8 +68,8 @@
     </label>
   </radio-group>
 </view>
-<view>
-  <text>您进行炒股的话，个人能接受交易频率最高是（买卖股票各算交易一次）：</text>
+<view style="margin:20rpx">
+  <text style="color:green">您进行炒股的话，个人能接受交易频率最高是（买卖股票各算交易一次）：</text>
   <radio-group class="radio-group" bindchange="frequencyChange">
     <label class="radio" wx:for="{{frequencyChoices}}">
        <view>
@@ -78,8 +78,8 @@
     </label>
   </radio-group>
 </view>
-<view>
-  <text>此题请选择1</text>
+<view style="margin:20rpx">
+  <text style="color:green">此题请选择1</text>
   <radio-group class="radio-group" bindchange="choose1Change">
     <label class="radio" wx:for="{{choose1Choices}}">
        <view>
