@@ -34,8 +34,8 @@ Page({
         hold: 0,
         //For this Round:
         current_hold: 0,
-        input_temp: "",
-        num: 0,
+        input_temp: "", //raw input
+        num: 0, //raw input converted to int
         prices: [
           {name: 0, value: 0},
           //{name: 1, value: 1000},
@@ -217,8 +217,16 @@ Page({
     })
     app.globalData.profit = this.data.profit;
     //Upload answers
-    app.globalData.simulation_answers.push(this.data.stock_list);
-    //console.log(app.globalData.simulation_answers[0][0].current_hold);
+    var temp = new Array();
+    temp.push("Round")
+    temp.push(this.data.round);
+    for(var i=0;i<5;i++) {
+      temp.push(this.data.stock_list[i].buy);
+      temp.push(this.data.stock_list[i].num);
+    }
+    app.globalData.simulation_answers.push(temp);
+    console.log(app.globalData.simulation_answers);
+
     //Reset variables
     for(var i=0;i<5;i++) {
       this.data.stock_list[i].buy="买";

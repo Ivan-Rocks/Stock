@@ -16,5 +16,5 @@
   </label>
 </view>
 <view>
-  <button type="primary" bindtap="TurnPage">继续</button>
+  <button type="primary" bindtap="TurnPage" disabled="{{!submit_status}}">继续</button>
 </view>

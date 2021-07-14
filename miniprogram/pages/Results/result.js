@@ -57,8 +57,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(app.globalData.occupation);
-    console.log(this.data.occupation)
+    console.log(this.data.simulation_answers[0][0].buy);
   },
 
   /**

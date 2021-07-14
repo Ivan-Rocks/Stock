@@ -4,26 +4,25 @@
 </view>
 
 <view>
-  <text>{{name}}</text>
   <text>{{name}}你一共赚了{{profit}}元</text>
-
 </view>
 
 <view>
+  <view style="color:green">Baisc:</view>
   <text>{{name}}|{{gender}}|{{age}}|{{diploma}}|{{occupation}}|{{income}}|{{stock_experience}}|</text>
   <text>{{investment_experience}}|{{frequency}}|{{choose1}}</text>
 </view>
 
 <view>
+  <view style="color:green">Personality:</view>
   <label class="outerloop" wx:for="{{personality_answers}}" style="word-break: break-all">
     <text>{{item}}</text>
   </label>
 </view>
 
 <view>
+  <view style="color:green">Simulattion:</view>
   <label class="outerloop" wx:for="{{simulation_answers}}" style="word-break: break-all">
-    <view>
-      <text>{{item[0].current_hold}},</text>
-    </view>
+    <view>{{item}}</view>
   </label>
 </view>
