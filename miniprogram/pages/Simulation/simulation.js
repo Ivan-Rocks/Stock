@@ -230,7 +230,7 @@ Page({
       temp.push(this.data.stock_list[i].num);
     }
     app.globalData.simulation_answers.push(temp);
-    console.log(app.globalData.simulation_answers);
+    //console.log(app.globalData.simulation_answers);
 
     //Reset variables
     for(var i=0;i<5;i++) {
@@ -254,6 +254,16 @@ Page({
       })
       //console.log(this.data.round);
     } else {
+      for(var i=0;i<5;i++) {
+        this.data.balance += this.data.stock_list[i].hold * this.data.stock_list[i].prices[this.data.round].value;
+        console.log(this.data.balance);
+      }
+      this.data.profit = this.data.balance - 10000;
+      this.setData({
+        balance: this.data.balance,
+        profit: this.data.profit,
+      })
+      app.globalData.profit = this.data.profit;
       wx.navigateTo({
         url: '/pages/Results/result',
       })

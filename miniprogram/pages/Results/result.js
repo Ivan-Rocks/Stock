@@ -26,8 +26,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.data.basic_anwers.push(app.globalData.name);
-    this.data.basic_anwers.push(app.globalData.gender);
     this.setData({
       name: app.globalData.name,
       gender: app.globalData.gender,
