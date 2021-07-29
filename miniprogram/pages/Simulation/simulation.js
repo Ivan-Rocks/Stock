@@ -210,6 +210,11 @@ Page({
   },
 
   onSubmit: function(e) {
+    if(this.data.round==10) {
+      wx.navigateTo({
+        url: '/pages/Results/result',
+      })
+    }
     //Pre Submit: Update data
     this.setData({
       balance: this.data.current_balance,
@@ -245,7 +250,7 @@ Page({
     });
     if(this.data.round<=10) {
       this.setData({
-        url: "pics/img" + this.data.round + ".jpg",
+        url: "pics/img" + this.data.round + ".png",
       })
       //console.log(this.data.round);
     } else {
@@ -311,7 +316,7 @@ Page({
    */
   onReady: function () {
     this.setData({
-      url: "pics/img1.jpg"
+      url: "pics/img1.png"
     })
   },
 
